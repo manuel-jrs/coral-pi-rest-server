@@ -95,11 +95,8 @@ if __name__ == "__main__":
 
     global MODEL
     MODEL = args.model
-    model_file = os.path.join(args.models_directory, args.model)
-    assert os.path.isfile(model_file)
-
-    labels_file = os.path.join(args.models_directory, args.labels)
-    assert os.path.isfile(labels_file)
+    model_file = args.models_directory + args.model
+    labels_file = args.models_directory + args.labels  
 
     global labels
     labels = dataset.read_label_file(labels_file)
